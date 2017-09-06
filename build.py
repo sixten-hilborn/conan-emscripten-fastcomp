@@ -4,8 +4,8 @@ import platform
 if __name__ == "__main__":
     builder = ConanMultiPackager()
     if platform.system() == "Windows":
-        builder.add({'arch': 'x86', 'build_type': 'Release', 'compiler': 'Visual Studio', 'compiler.version': '10'}, {}, {}, {})
-        builder.add({'arch': 'x86_64', 'build_type': 'Release', 'compiler': 'Visual Studio', 'compiler.version': '10'}, {}, {}, {})
+        builder.add({'arch': 'x86', 'build_type': 'Release', 'compiler': 'Visual Studio', 'compiler.version': '14'}, {}, {}, {})
+        builder.add({'arch': 'x86_64', 'build_type': 'Release', 'compiler': 'Visual Studio', 'compiler.version': '14'}, {}, {}, {})
     elif platform.system() == "Linux":
         builder.add({'arch': 'x86_64', 'build_type': 'Release', 'compiler': 'gcc', 'compiler.version': '4.9'}, {}, {}, {})
     elif platform.system() == "Darwin":
