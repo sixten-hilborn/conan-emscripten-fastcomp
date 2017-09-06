@@ -1,18 +1,15 @@
 import os
 from conans import ConanFile, CMake
-from conans.tools import get
+from conans.tools import get, patch
 
 
 class EmscriptenFastcompConan(ConanFile):
     name = "emscripten-fastcomp"
-    version = "1.37.13"
+    version = "1.37.21"
     license = "University of Illinois/NCSA Open Source - https://github.com/kripken/emscripten-fastcomp/blob/master/LICENSE.TXT"
     url = "https://github.com/sixten-hilborn/conan-emscripten-fastcomp"
     settings = {"os": None, "arch": None, "compiler": None, "build_type": ["Release"]}
-    options = {
-        "ems_path": "ANY"
-    }
-    default_options = "ems_path=False"
+    exports = ["patch"]
     description = "Recipe for building Emscripten toolchain for cross compilation"
     short_paths = True
 
@@ -33,6 +30,7 @@ class EmscriptenFastcompConan(ConanFile):
 
 
     def build(self):
+        patch(patch_file='patch', base_path=self.folder)
         cmake = CMake(self)
         defs = {
             'CMAKE_INSTALL_PREFIX': os.path.join(self.conanfile_directory, 'install'),
