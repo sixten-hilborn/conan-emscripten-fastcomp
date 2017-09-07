@@ -5,7 +5,7 @@ environment:
     PYTHON_ARCH: "32"
     
     CONAN_UPLOAD: https://api.bintray.com/conan/sixten-hilborn/conan
-    CONAN_REFERENCE: "emscripten-fastcomp/*"
+    CONAN_REFERENCE: "emscripten-fastcomp/1.37.21"
     CONAN_USERNAME: "hilborn"
     CONAN_CHANNEL: "stable"
     CONAN_LOGIN_USERNAME: "sixten-hilborn"
