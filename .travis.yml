@@ -9,6 +9,7 @@ env:
     - CONAN_REFERENCE="emscripten-fastcomp/*"
     - CONAN_USERNAME="hilborn"
     - CONAN_CHANNEL="stable"
+    - CONAN_LOGIN_USERNAME="sixten-hilborn"
     - CONAN_TOTAL_PAGES=1
     - CONAN_CURRENT_PAGE=1
 
